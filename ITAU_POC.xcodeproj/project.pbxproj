@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09DB9B54F46012AF2A5DC8F8 /* Pods_ITAU_POCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327D14BE7395D5A8478647AE /* Pods_ITAU_POCUITests.framework */; };
+		25C9563C6E61DD1232331C7C /* Pods_ITAU_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED91CE1DEF6AD425B42409B /* Pods_ITAU_POC.framework */; };
 		2B03992423717DC500D8F833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03992323717DC500D8F833 /* AppDelegate.swift */; };
 		2B03992623717DC500D8F833 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03992523717DC500D8F833 /* SceneDelegate.swift */; };
 		2B03992923717DC500D8F833 /* ITAU_POC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B03992723717DC500D8F833 /* ITAU_POC.xcdatamodeld */; };
@@ -16,6 +18,30 @@
 		2B03993323717DC700D8F833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B03993123717DC700D8F833 /* LaunchScreen.storyboard */; };
 		2B03993E23717DC700D8F833 /* ITAU_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03993D23717DC700D8F833 /* ITAU_POCTests.swift */; };
 		2B03994923717DC700D8F833 /* ITAU_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03994823717DC700D8F833 /* ITAU_POCUITests.swift */; };
+		2B1552B323CC90C7001A6808 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1552B223CC90C7001A6808 /* AppConstants.swift */; };
+		2B1552B523CC9532001A6808 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1552B423CC9532001A6808 /* TextField.swift */; };
+		2B2B691D23969AB700F86476 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B691C23969AB700F86476 /* UserDataStore.swift */; };
+		2B2D99DE23D07FC600E59E28 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2D99DD23D07FC600E59E28 /* LoginVCTests.swift */; };
+		2B2D99E023D092C500E59E28 /* AccountDetailsVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2D99DF23D092C500E59E28 /* AccountDetailsVCTests.swift */; };
+		2B39FCE0239FBCB500AF750B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B39FCDF239FBCB500AF750B /* Validator.swift */; };
+		2B39FCE2239FD93100AF750B /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B39FCE1239FD93100AF750B /* ServiceHandler.swift */; };
+		2B3D325923792A2600FF7C71 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325323792A2600FF7C71 /* LoginPresenter.swift */; };
+		2B3D325A23792A2600FF7C71 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325423792A2600FF7C71 /* LoginWorker.swift */; };
+		2B3D325B23792A2600FF7C71 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325523792A2600FF7C71 /* LoginRouter.swift */; };
+		2B3D325C23792A2600FF7C71 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325623792A2600FF7C71 /* LoginModels.swift */; };
+		2B3D325D23792A2600FF7C71 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325723792A2600FF7C71 /* LoginViewController.swift */; };
+		2B3D325E23792A2600FF7C71 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325823792A2600FF7C71 /* LoginInteractor.swift */; };
+		2B3D32652379598900FF7C71 /* AccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D325F2379598900FF7C71 /* AccountDetailsPresenter.swift */; };
+		2B3D32662379598900FF7C71 /* AccountDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D32602379598900FF7C71 /* AccountDetailsWorker.swift */; };
+		2B3D32672379598900FF7C71 /* AccountDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D32612379598900FF7C71 /* AccountDetailsRouter.swift */; };
+		2B3D32682379598900FF7C71 /* AccountDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D32622379598900FF7C71 /* AccountDetailsModels.swift */; };
+		2B3D32692379598900FF7C71 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D32632379598900FF7C71 /* AccountDetailsViewController.swift */; };
+		2B3D326A2379598900FF7C71 /* AccountDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D32642379598900FF7C71 /* AccountDetailsInteractor.swift */; };
+		2B3D32AA237964D300FF7C71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B3D32A8237964D300FF7C71 /* Main.storyboard */; };
+		2B8CA017238EE42D00DA9286 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CA016238EE42D00DA9286 /* Common.swift */; };
+		2BBB088F238C01EF006ADC8F /* AccountDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB088E238C01EF006ADC8F /* AccountDetailsTableViewCell.swift */; };
+		2BBB0891238C10C8006ADC8F /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB0890238C10C8006ADC8F /* ServiceConstants.swift */; };
+		64866FE876DB90DBEDD17163 /* Pods_ITAU_POCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDE6ABE6593A10F17836B48 /* Pods_ITAU_POCTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B20BE60461419700EE6C9AB /* Pods-ITAU_POCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POCTests.release.xcconfig"; path = "Target Support Files/Pods-ITAU_POCTests/Pods-ITAU_POCTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B03992023717DC500D8F833 /* ITAU_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITAU_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B03992323717DC500D8F833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B03992523717DC500D8F833 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +78,37 @@
 		2B03994423717DC700D8F833 /* ITAU_POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITAU_POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B03994823717DC700D8F833 /* ITAU_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITAU_POCUITests.swift; sourceTree = "<group>"; };
 		2B03994A23717DC700D8F833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B1552B223CC90C7001A6808 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		2B1552B423CC9532001A6808 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		2B2B691C23969AB700F86476 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		2B2D99DD23D07FC600E59E28 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
+		2B2D99DF23D092C500E59E28 /* AccountDetailsVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsVCTests.swift; sourceTree = "<group>"; };
+		2B39FCDF239FBCB500AF750B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		2B39FCE1239FD93100AF750B /* ServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
+		2B3D325323792A2600FF7C71 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		2B3D325423792A2600FF7C71 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		2B3D325523792A2600FF7C71 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		2B3D325623792A2600FF7C71 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		2B3D325723792A2600FF7C71 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2B3D325823792A2600FF7C71 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		2B3D325F2379598900FF7C71 /* AccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresenter.swift; sourceTree = "<group>"; };
+		2B3D32602379598900FF7C71 /* AccountDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsWorker.swift; sourceTree = "<group>"; };
+		2B3D32612379598900FF7C71 /* AccountDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsRouter.swift; sourceTree = "<group>"; };
+		2B3D32622379598900FF7C71 /* AccountDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsModels.swift; sourceTree = "<group>"; };
+		2B3D32632379598900FF7C71 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
+		2B3D32642379598900FF7C71 /* AccountDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsInteractor.swift; sourceTree = "<group>"; };
+		2B3D32A9237964D300FF7C71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ITAU_POC/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B8CA016238EE42D00DA9286 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		2BBB088E238C01EF006ADC8F /* AccountDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		2BBB0890238C10C8006ADC8F /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		327D14BE7395D5A8478647AE /* Pods_ITAU_POCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITAU_POCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		488BA34C6C2A50CF19482B0F /* Pods-ITAU_POCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POCTests.debug.xcconfig"; path = "Target Support Files/Pods-ITAU_POCTests/Pods-ITAU_POCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CDE6ABE6593A10F17836B48 /* Pods_ITAU_POCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITAU_POCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8974C67CC64FAB37031A5776 /* Pods-ITAU_POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POC.release.xcconfig"; path = "Target Support Files/Pods-ITAU_POC/Pods-ITAU_POC.release.xcconfig"; sourceTree = "<group>"; };
+		8D29F9D88492A6FA7BD69D13 /* Pods-ITAU_POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POCUITests.release.xcconfig"; path = "Target Support Files/Pods-ITAU_POCUITests/Pods-ITAU_POCUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9ED91CE1DEF6AD425B42409B /* Pods_ITAU_POC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITAU_POC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7450302F9271990B8A85493 /* Pods-ITAU_POCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POCUITests.debug.xcconfig"; path = "Target Support Files/Pods-ITAU_POCUITests/Pods-ITAU_POCUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEBC3FD306842F7A2708327B /* Pods-ITAU_POC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITAU_POC.debug.xcconfig"; path = "Target Support Files/Pods-ITAU_POC/Pods-ITAU_POC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C9563C6E61DD1232331C7C /* Pods_ITAU_POC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64866FE876DB90DBEDD17163 /* Pods_ITAU_POCTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DB9B54F46012AF2A5DC8F8 /* Pods_ITAU_POCUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +146,8 @@
 				2B03993C23717DC700D8F833 /* ITAU_POCTests */,
 				2B03994723717DC700D8F833 /* ITAU_POCUITests */,
 				2B03992123717DC500D8F833 /* Products */,
+				5A9D8F99E0D7CB95C4FBE890 /* Pods */,
+				D0DBCDBB03B458F470B05EEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +164,14 @@
 		2B03992223717DC500D8F833 /* ITAU_POC */ = {
 			isa = PBXGroup;
 			children = (
+				2B2B691B23969A8900F86476 /* Utils */,
+				2B6D5C39237318810056D76C /* Scenes */,
+				2B6D5C37237318660056D76C /* Services */,
+				2B6D5C36237316170056D76C /* Models */,
 				2B03992323717DC500D8F833 /* AppDelegate.swift */,
 				2B03992523717DC500D8F833 /* SceneDelegate.swift */,
 				2B03992A23717DC500D8F833 /* ContentView.swift */,
+				2B3D32A8237964D300FF7C71 /* Main.storyboard */,
 				2B03992C23717DC700D8F833 /* Assets.xcassets */,
 				2B03993123717DC700D8F833 /* LaunchScreen.storyboard */,
 				2B03993423717DC700D8F833 /* Info.plist */,
@@ -124,6 +192,7 @@
 		2B03993C23717DC700D8F833 /* ITAU_POCTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B1552B623CF215C001A6808 /* Scene */,
 				2B03993D23717DC700D8F833 /* ITAU_POCTests.swift */,
 				2B03993F23717DC700D8F833 /* Info.plist */,
 			);
@@ -139,6 +208,118 @@
 			path = ITAU_POCUITests;
 			sourceTree = "<group>";
 		};
+		2B1552B623CF215C001A6808 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2B1552B823CF2169001A6808 /* AccountDetails */,
+				2B1552B723CF2163001A6808 /* Login */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		2B1552B723CF2163001A6808 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2B2D99DD23D07FC600E59E28 /* LoginVCTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2B1552B823CF2169001A6808 /* AccountDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2B2D99DF23D092C500E59E28 /* AccountDetailsVCTests.swift */,
+			);
+			path = AccountDetails;
+			sourceTree = "<group>";
+		};
+		2B1FEF86237921F800C95317 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2B3D325423792A2600FF7C71 /* LoginWorker.swift */,
+				2B3D325323792A2600FF7C71 /* LoginPresenter.swift */,
+				2B3D325523792A2600FF7C71 /* LoginRouter.swift */,
+				2B3D325723792A2600FF7C71 /* LoginViewController.swift */,
+				2B3D325823792A2600FF7C71 /* LoginInteractor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2B1FEF872379220000C95317 /* AccountDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2B3D32602379598900FF7C71 /* AccountDetailsWorker.swift */,
+				2B3D325F2379598900FF7C71 /* AccountDetailsPresenter.swift */,
+				2B3D32612379598900FF7C71 /* AccountDetailsRouter.swift */,
+				2B3D32632379598900FF7C71 /* AccountDetailsViewController.swift */,
+				2B3D32642379598900FF7C71 /* AccountDetailsInteractor.swift */,
+				2BBB088E238C01EF006ADC8F /* AccountDetailsTableViewCell.swift */,
+			);
+			path = AccountDetails;
+			sourceTree = "<group>";
+		};
+		2B2B691B23969A8900F86476 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B2B691C23969AB700F86476 /* UserDataStore.swift */,
+				2B39FCDF239FBCB500AF750B /* Validator.swift */,
+				2B1552B223CC90C7001A6808 /* AppConstants.swift */,
+				2B1552B423CC9532001A6808 /* TextField.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2B6D5C36237316170056D76C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B3D325623792A2600FF7C71 /* LoginModels.swift */,
+				2B3D32622379598900FF7C71 /* AccountDetailsModels.swift */,
+				2B8CA016238EE42D00DA9286 /* Common.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B6D5C37237318660056D76C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB0890238C10C8006ADC8F /* ServiceConstants.swift */,
+				2B39FCE1239FD93100AF750B /* ServiceHandler.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B6D5C39237318810056D76C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2B1FEF872379220000C95317 /* AccountDetails */,
+				2B1FEF86237921F800C95317 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5A9D8F99E0D7CB95C4FBE890 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEBC3FD306842F7A2708327B /* Pods-ITAU_POC.debug.xcconfig */,
+				8974C67CC64FAB37031A5776 /* Pods-ITAU_POC.release.xcconfig */,
+				488BA34C6C2A50CF19482B0F /* Pods-ITAU_POCTests.debug.xcconfig */,
+				0B20BE60461419700EE6C9AB /* Pods-ITAU_POCTests.release.xcconfig */,
+				A7450302F9271990B8A85493 /* Pods-ITAU_POCUITests.debug.xcconfig */,
+				8D29F9D88492A6FA7BD69D13 /* Pods-ITAU_POCUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0DBCDBB03B458F470B05EEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED91CE1DEF6AD425B42409B /* Pods_ITAU_POC.framework */,
+				5CDE6ABE6593A10F17836B48 /* Pods_ITAU_POCTests.framework */,
+				327D14BE7395D5A8478647AE /* Pods_ITAU_POCUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +327,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B03994D23717DC700D8F833 /* Build configuration list for PBXNativeTarget "ITAU_POC" */;
 			buildPhases = (
+				C5FC01859C48C65ACED078C2 /* [CP] Check Pods Manifest.lock */,
 				2B03991C23717DC500D8F833 /* Sources */,
 				2B03991D23717DC500D8F833 /* Frameworks */,
 				2B03991E23717DC500D8F833 /* Resources */,
@@ -163,6 +345,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B03995023717DC700D8F833 /* Build configuration list for PBXNativeTarget "ITAU_POCTests" */;
 			buildPhases = (
+				D8580D78B43EE9FE33D02C84 /* [CP] Check Pods Manifest.lock */,
 				2B03993523717DC700D8F833 /* Sources */,
 				2B03993623717DC700D8F833 /* Frameworks */,
 				2B03993723717DC700D8F833 /* Resources */,
@@ -181,6 +364,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B03995323717DC700D8F833 /* Build configuration list for PBXNativeTarget "ITAU_POCUITests" */;
 			buildPhases = (
+				5CC57440D4CAE89822697E07 /* [CP] Check Pods Manifest.lock */,
 				2B03994023717DC700D8F833 /* Sources */,
 				2B03994123717DC700D8F833 /* Frameworks */,
 				2B03994223717DC700D8F833 /* Resources */,
@@ -246,6 +430,7 @@
 				2B03993323717DC700D8F833 /* LaunchScreen.storyboard in Resources */,
 				2B03993023717DC700D8F833 /* Preview Assets.xcassets in Resources */,
 				2B03992D23717DC700D8F833 /* Assets.xcassets in Resources */,
+				2B3D32AA237964D300FF7C71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,15 +450,104 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5CC57440D4CAE89822697E07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITAU_POCUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5FC01859C48C65ACED078C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITAU_POC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8580D78B43EE9FE33D02C84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITAU_POCTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B03991C23717DC500D8F833 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3D325923792A2600FF7C71 /* LoginPresenter.swift in Sources */,
+				2B3D325E23792A2600FF7C71 /* LoginInteractor.swift in Sources */,
+				2B3D326A2379598900FF7C71 /* AccountDetailsInteractor.swift in Sources */,
 				2B03992423717DC500D8F833 /* AppDelegate.swift in Sources */,
+				2B3D32672379598900FF7C71 /* AccountDetailsRouter.swift in Sources */,
+				2B3D325A23792A2600FF7C71 /* LoginWorker.swift in Sources */,
+				2B39FCE2239FD93100AF750B /* ServiceHandler.swift in Sources */,
 				2B03992623717DC500D8F833 /* SceneDelegate.swift in Sources */,
 				2B03992B23717DC500D8F833 /* ContentView.swift in Sources */,
+				2B3D32682379598900FF7C71 /* AccountDetailsModels.swift in Sources */,
 				2B03992923717DC500D8F833 /* ITAU_POC.xcdatamodeld in Sources */,
+				2BBB088F238C01EF006ADC8F /* AccountDetailsTableViewCell.swift in Sources */,
+				2B3D325C23792A2600FF7C71 /* LoginModels.swift in Sources */,
+				2B3D325B23792A2600FF7C71 /* LoginRouter.swift in Sources */,
+				2B3D32692379598900FF7C71 /* AccountDetailsViewController.swift in Sources */,
+				2B2B691D23969AB700F86476 /* UserDataStore.swift in Sources */,
+				2B39FCE0239FBCB500AF750B /* Validator.swift in Sources */,
+				2B1552B523CC9532001A6808 /* TextField.swift in Sources */,
+				2B8CA017238EE42D00DA9286 /* Common.swift in Sources */,
+				2B1552B323CC90C7001A6808 /* AppConstants.swift in Sources */,
+				2B3D325D23792A2600FF7C71 /* LoginViewController.swift in Sources */,
+				2BBB0891238C10C8006ADC8F /* ServiceConstants.swift in Sources */,
+				2B3D32662379598900FF7C71 /* AccountDetailsWorker.swift in Sources */,
+				2B3D32652379598900FF7C71 /* AccountDetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +555,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2D99DE23D07FC600E59E28 /* LoginVCTests.swift in Sources */,
 				2B03993E23717DC700D8F833 /* ITAU_POCTests.swift in Sources */,
+				2B2D99E023D092C500E59E28 /* AccountDetailsVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +591,14 @@
 				2B03993223717DC700D8F833 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2B3D32A8237964D300FF7C71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B3D32A9237964D300FF7C71 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -436,6 +720,7 @@
 		};
 		2B03994E23717DC700D8F833 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEBC3FD306842F7A2708327B /* Pods-ITAU_POC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -455,6 +740,7 @@
 		};
 		2B03994F23717DC700D8F833 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8974C67CC64FAB37031A5776 /* Pods-ITAU_POC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,6 +760,7 @@
 		};
 		2B03995123717DC700D8F833 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488BA34C6C2A50CF19482B0F /* Pods-ITAU_POCTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +782,7 @@
 		};
 		2B03995223717DC700D8F833 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B20BE60461419700EE6C9AB /* Pods-ITAU_POCTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +804,7 @@
 		};
 		2B03995423717DC700D8F833 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7450302F9271990B8A85493 /* Pods-ITAU_POCUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +824,7 @@
 		};
 		2B03995523717DC700D8F833 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D29F9D88492A6FA7BD69D13 /* Pods-ITAU_POCUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
