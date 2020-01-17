@@ -1,0 +1,6 @@
+framework module Pods_ITAU_POC {
+  umbrella header "Pods-ITAU_POC-umbrella.h"
+
+  export *
+  module * { export * }
+}
