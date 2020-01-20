@@ -21,12 +21,24 @@ protocol AccountDetailsDataStore {
     var userDetails: UserAccount? { get set }
 }
 
-class AccountDetailsInteractor: AccountDetailsBusinessLogic, AccountDetailsDataStore {
-    
+class AccountDetailsInteractor: AccountDetailsDataStore {
     var presenter: AccountDetailsPresentationLogic?
     var worker = AccountDetailsWorker()
     var userDetails: UserAccount?
     
+}
+
+extension AccountDetailsInteractor : AccountDetailsBusinessLogic {
+    /// Get Logged In User Data
+    func getUserData() {
+        if let userAccountDetails = userDetails {
+            let response = AccountDetails.AccountData.Response(accountDetails: userAccountDetails)
+            presenter?.presentAccountDetails(response: response)
+        }
+    }
+    
+    /// Get Account Statement List
+    /// - Parameter request: Statement Detials request
     func getStatementList(request: AccountDetails.StatementDetails.Request) {
         guard let userId = UserDataStore.shared.getLoggedInUserId()
             else {
@@ -37,24 +49,22 @@ class AccountDetailsInteractor: AccountDetailsBusinessLogic, AccountDetailsDataS
                 return
         }
         presenter?.presentStartLoaderActivity()
-        worker.getStatementDetails(urlString: urlString, completion: { [weak self] (success, response, error) in
-            if(success) {
-                if let responseData = response {
-                    if responseData.statementList.count != 0 {
-                        self?.presenter?.presentStatementDetails(response: AccountDetails.StatementDetails.Response(statements: responseData.statementList))
+        if Reachability.isConnectedToNetwork() == true {
+            worker.getStatementDetails(urlString: urlString, completion: { [weak self] (success, response, error) in
+                if(success) {
+                    if let responseData = response {
+                        if responseData.statementList.count != 0 {
+                            self?.presenter?.presentStatementDetails(response: AccountDetails.StatementDetails.Response(statements: responseData.statementList))
+                        }
                     }
                 }
-            }
-            else {
-                self?.presenter?.presentStopLoaderActivity()
-            }
-        })
-    }
-    
-    func getUserData() {
-        if let userAccountDetails = userDetails {
-            let response = AccountDetails.AccountData.Response(accountDetails: userAccountDetails)
-            presenter?.presentAccountDetails(response: response)
+                else {
+                    self?.presenter?.presentStopLoaderActivity()
+                }
+            })
+        }
+        else {
+            presenter?.presentNetworkError()
         }
     }
 }

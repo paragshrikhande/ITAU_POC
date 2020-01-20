@@ -13,7 +13,6 @@
 import UIKit
 
 enum AccountDetails {
-    // MARK: Use cases
     enum AccountData {
         struct Request {
             var user : String?

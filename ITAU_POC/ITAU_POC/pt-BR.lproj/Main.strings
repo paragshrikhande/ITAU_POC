@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Jose da Silva Teste"; ObjectID = "0us-wg-Khr"; */
+"0us-wg-Khr.text" = "Jose da Silva Teste";
+
+/* Class = "UITextField"; placeholder = "User"; ObjectID = "AU8-wB-js6"; */
+"AU8-wB-js6.placeholder" = "User";
+
+/* Class = "UILabel"; text = "R$1.000,00"; ObjectID = "AtZ-EA-QD8"; */
+"AtZ-EA-QD8.text" = "R$1.000,00";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Caa-69-IPz"; */
+"Caa-69-IPz.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "R$1.000,00"; ObjectID = "EXZ-lZ-Cze"; */
+"EXZ-lZ-Cze.text" = "R$1.000,00";
+
+/* Class = "UILabel"; text = "2050 / 01.111222-4"; ObjectID = "FuT-Rg-2bg"; */
+"FuT-Rg-2bg.text" = "2050 / 01.111222-4";
+
+/* Class = "UILabel"; text = "Saldo"; ObjectID = "IO1-Jg-ktG"; */
+"IO1-Jg-ktG.text" = "Saldo";
+
+/* Class = "UILabel"; text = "Conta de luz"; ObjectID = "Osj-x9-tZj"; */
+"Osj-x9-tZj.text" = "Conta de luz";
+
+/* Class = "UILabel"; text = "Pagamento"; ObjectID = "eqr-rK-bv4"; */
+"eqr-rK-bv4.text" = "Pagamento";
+
+/* Class = "UILabel"; text = "Incorrect Input!"; ObjectID = "ky8-En-PEn"; */
+"ky8-En-PEn.text" = "Incorrect Input!";
+
+/* Class = "UILabel"; text = "Conta"; ObjectID = "nGh-ff-tXN"; */
+"nGh-ff-tXN.text" = "Conta";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "t3b-A8-K22"; */
+"t3b-A8-K22.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "12/12/2018"; ObjectID = "yd9-vB-gdK"; */
+"yd9-vB-gdK.text" = "12/12/2018";

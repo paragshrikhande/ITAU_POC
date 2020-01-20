@@ -9,6 +9,12 @@
 import Foundation
 
 class ServiceHandler {
+    /// Post Request
+    /// - Parameters:
+    ///   - url: URL to hit
+    ///   - responseType: defined response type
+    ///   - body: request type body
+    ///   - completion: response received from service
     class func postRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -47,6 +53,11 @@ class ServiceHandler {
         task.resume()
     }
     
+    /// Get request
+    /// - Parameters:
+    ///   - url: URL to hit
+    ///   - responseType: Expected response type
+    ///   - completion: response received from service
     class func getRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

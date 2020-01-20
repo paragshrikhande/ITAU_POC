@@ -13,13 +13,14 @@
 import UIKit
 
 protocol LoginDisplayLogic: class {
-    func displayAccountDetailsDetails(viewModel: Login.LoginModel.ViewModel)
+    func displayAccountDetails(viewModel: Login.LoginModel.ViewModel)
     func displayLoggedInUserDetails(request: Login.LoginModel.Request)
+    func showNetworkError()
     func startLoaderActivity()
     func stopLoaderActivity()
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic
+class LoginViewController: UIViewController
 {
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     }
     
     // MARK: Setup
+    /// Basic Clean Swift Setup
     private func setup() {
         let viewController = self
         let interactor = LoginInteractor()
@@ -78,9 +80,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         resetUI()
     }
     
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
+    // MARK: Login Action
     @IBAction func btnLoginAction(_ sender: Any) {
         if validateUserName() == true && validatePassword() == true {
             lblInputError.text = ""
@@ -88,7 +88,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         }
     }
     
-    func loginUser() {
+    /// Login User
+    private func loginUser() {
         guard let user = txtUserName.text else{
             return
         }
@@ -99,27 +100,19 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         interactor?.loginUser(request: request)
     }
     
-    func displayAccountDetailsDetails(viewModel: Login.LoginModel.ViewModel) {
-        //lblInputError.text = "Success"
-        stopLoaderActivity()
-        performSegue(withIdentifier: "AccountDetails", sender: nil)
-    }
-    
-    func displayLoggedInUserDetails(request: Login.LoginModel.Request) {
-        txtUserName.text = request.loginInfo?.user
-    }
-    
+    /// Configure basic UI
     private func configureUI() {
         btnLogin.layer.cornerRadius = 5
         btnLogin.layer.borderWidth = 1
         txtPassword.isSecureTextEntry = true
         loaderViewBG.isHidden = true
         
-        btnLogin.titleLabel?.text = AppConstant.txtLogin
-        txtUserName.placeholder = AppConstant.txtUserPlaceholder
-        txtPassword.placeholder = AppConstant.txtPasswordPlaceHolder
+        btnLogin.titleLabel?.text = NSLocalizedString("txt_Login", comment: "")
+        txtUserName.placeholder = NSLocalizedString("txt_UserPlaceholder", comment: "")
+        txtPassword.placeholder = NSLocalizedString("txt_PasswordPlaceHolder", comment: "")
     }
     
+    /// Reset UI
     private func resetUI () {
         txtUserName.text = ""
         txtPassword.text = ""
@@ -128,11 +121,35 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         interactor?.getUserDetails()
     }
     
+    /// Unwind segue from acount details VC
+    /// - Parameter unwindSegue: segue
     @IBAction func unwindToLoginViewController(_ unwindSegue: UIStoryboardSegue) {
+    }
+}
+
+extension LoginViewController : LoginDisplayLogic {
+    /// Display account details
+    /// - Parameter viewModel: login response model
+    func displayAccountDetails(viewModel: Login.LoginModel.ViewModel) {
+        stopLoaderActivity()
+        performSegue(withIdentifier: "AccountDetails", sender: nil)
+    }
+    
+    /// Persist last logged In user name
+    /// - Parameter request: login model
+    func displayLoggedInUserDetails(request: Login.LoginModel.Request) {
+        txtUserName.text = request.loginInfo?.user
+    }
+    
+    /// show network error
+    func showNetworkError() {
+        let txtAlertError = NSLocalizedString("txt_ErrorAlert", comment: "")
+        let txtAlertMessage = NSLocalizedString("txt_NetworkError", comment: "")
+        self.showAlertMessage(titleString: txtAlertError, messageString: txtAlertMessage)
     }
     
     // MARK: - Loader Methods
-    // Loader - Start Load
+    /// Start Loading Activity
     func startLoaderActivity() {
         loaderViewBG.isHidden = false
         activityIndicator.isHidden = false
@@ -141,6 +158,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         }
     }
     
+    /// Stop loading activity
     func stopLoaderActivity() {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
@@ -169,7 +187,8 @@ extension LoginViewController : UITextFieldDelegate {
 
 //Input Validation
 extension LoginViewController {
-    func validateUserName() -> Bool {
+    /// Validate User name
+    fileprivate func validateUserName() -> Bool {
         var isValidInput : Bool = true
         do {
             let _ = try txtUserName.validatedText(validationType: ValidatorType.username)
@@ -180,7 +199,8 @@ extension LoginViewController {
         return isValidInput
     }
     
-    func validatePassword() -> Bool  {
+    /// Validate Password
+    fileprivate func validatePassword() -> Bool  {
         var isValidInput : Bool = true
         do {
             let _ = try txtPassword.validatedText(validationType: ValidatorType.password)
@@ -191,6 +211,8 @@ extension LoginViewController {
         return isValidInput
     }
     
+    /// Show error text in case of incorrect credentials
+    /// - Parameter errorMessage: Error Message to display
     fileprivate func errorText(errorMessage: String) {
         lblInputError.isHidden = false
         lblInputError.text = errorMessage

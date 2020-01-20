@@ -13,6 +13,11 @@
 import UIKit
 
 class LoginWorker {
+    /// Authenticate User
+    /// - Parameters:
+    ///   - username: User Name
+    ///   - password: Password
+    ///   - completion: Response received from service
     func authenticateUser(username: String, password: String, completion: @escaping (Bool, LoginResponse?, Error?) -> Void) {
         guard let urlString = URL(string: ServiceConstants.BaseURL + ServiceConstants.UrlCollection.LoginUrl.login)
             else {

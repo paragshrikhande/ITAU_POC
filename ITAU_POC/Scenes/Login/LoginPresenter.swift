@@ -15,27 +15,41 @@ import UIKit
 protocol LoginPresentationLogic {
     func presentAuthenticationResult(response: Login.LoginModel.Response)
     func presentLoggedInUserDetails(request: Login.LoginModel.Request)
+    func presentNetworkError()
     func presentStartLoaderActivity()
     func presentStopLoaderActivity()
 }
 
-class LoginPresenter: LoginPresentationLogic {
+class LoginPresenter {
     weak var viewController: LoginDisplayLogic?
-    
-    // MARK: Do something
+}
+
+extension LoginPresenter : LoginPresentationLogic {
+    /// Present authentication Result
+    /// - Parameter response: Login Response Model
     func presentAuthenticationResult(response: Login.LoginModel.Response) {
         let viewModel = Login.LoginModel.ViewModel(loginResponse: response.loginResponse)
-        viewController?.displayAccountDetailsDetails(viewModel: viewModel)
+        viewController?.displayAccountDetails(viewModel: viewModel)
     }
     
+    /// Present logged in user detail
+    /// - Parameter request: login model details
     func presentLoggedInUserDetails(request: Login.LoginModel.Request) {
         viewController?.displayLoggedInUserDetails(request: request)
     }
     
+    /// Present Network Error to VC
+    func presentNetworkError() {
+        viewController?.showNetworkError()
+        presentStopLoaderActivity()
+    }
+    
+    /// Present start loading to VC
     func presentStartLoaderActivity() {
         viewController?.startLoaderActivity()
     }
     
+    /// Present stop loading to VC
     func presentStopLoaderActivity() {
         viewController?.stopLoaderActivity()
     }

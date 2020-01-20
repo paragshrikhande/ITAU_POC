@@ -20,10 +20,14 @@ protocol AccountDetailsDataPassing {
     var dataStore: AccountDetailsDataStore? { get }
 }
 
-class AccountDetailsRouter: NSObject, AccountDetailsRoutingLogic, AccountDetailsDataPassing {
+class AccountDetailsRouter: NSObject, AccountDetailsDataPassing {
     weak var viewController: AccountDetailsViewController?
     var dataStore: AccountDetailsDataStore?
-    
+}
+
+extension AccountDetailsRouter : AccountDetailsRoutingLogic {
+    /// Navigate to Root view
+    /// - Parameter segue: Segue Name
     func routeToLoginVC(segue: UIStoryboardSegue?) {
         if let accountDetailsVC = viewController {
             navigateToLoginVC(source: accountDetailsVC)
@@ -31,7 +35,9 @@ class AccountDetailsRouter: NSObject, AccountDetailsRoutingLogic, AccountDetails
     }
     
     // MARK: Navigation
-    func navigateToLoginVC(source: AccountDetailsViewController) {
+    /// Pop View To Login
+    /// - Parameter source: accountDetailsVC
+    private func navigateToLoginVC(source: AccountDetailsViewController) {
         source.navigationController?.popToRootViewController(animated: true)
     }
 }

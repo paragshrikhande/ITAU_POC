@@ -22,32 +22,40 @@ protocol LoginDataStore {
     var userDetails: UserAccount? { get set }
 }
 
-class LoginInteractor: LoginBusinessLogic, LoginDataStore {
+class LoginInteractor: LoginDataStore {
     var presenter: LoginPresentationLogic?
     var worker = LoginWorker()
     var userDetails: UserAccount?
-    
-    // MARK: Do something
+}
+
+extension LoginInteractor : LoginBusinessLogic {
+    /// Login Service Call
+    /// - Parameter request: login request
     func loginUser(request: Login.LoginModel.Request) {
         let user = request.loginInfo?.user
         let password = request.loginInfo?.password
         presenter?.presentStartLoaderActivity()
-        worker.authenticateUser(username: user ?? "", password: password ?? "") { [weak self] (success, response, error) in
-            
-            if(success) {
-                if let responseData = response, let userId = responseData.userAccount.userId {
-                    UserDataStore.shared.storeUserData(userId: String(format: "%d", userId), userName: user)
-                    let response = Login.LoginModel.Response(loginResponse: responseData)
-                    self?.userDetails = response.loginResponse?.userAccount
-                    self?.presenter?.presentAuthenticationResult(response: response)
+        if Reachability.isConnectedToNetwork() == true {
+            worker.authenticateUser(username: user ?? "", password: password ?? "") { [weak self] (success, response, error) in
+                if(success) {
+                    if let responseData = response, let userId = responseData.userAccount.userId {
+                        UserDataStore.shared.storeUserData(userId: String(format: "%d", userId), userName: user)
+                        let response = Login.LoginModel.Response(loginResponse: responseData)
+                        self?.userDetails = response.loginResponse?.userAccount
+                        self?.presenter?.presentAuthenticationResult(response: response)
+                    }
+                }
+                else {
+                    self?.presenter?.presentStopLoaderActivity()
                 }
             }
-            else {
-                self?.presenter?.presentStopLoaderActivity()
-            }
+        }
+        else {
+            presenter?.presentNetworkError()
         }
     }
     
+    /// Get suer details from User Data Store
     func getUserDetails() {
         let userName = UserDataStore.shared.getLoggedInUserName()
         let loginInfo = LoginInfo(user: userName, password: "")

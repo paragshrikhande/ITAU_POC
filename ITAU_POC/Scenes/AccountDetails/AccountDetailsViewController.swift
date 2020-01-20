@@ -15,15 +15,15 @@ import UIKit
 protocol AccountDetailsDisplayLogic: class {
     func displayUserDetail(viewModel: AccountDetails.AccountData.ViewModel)
     func displayAccountStatementList(viewModel: AccountDetails.StatementDetails.ViewModel)
+    func showNetworkError()
     func startLoaderActivity()
     func stopLoaderActivity()
 }
 
-class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic {
+class AccountDetailsViewController: UIViewController {
     
     //Cuatomer Details View
     @IBOutlet weak var customerDetailsView: UIView!
-    
     @IBOutlet weak var lblCustomerName: UILabel!
     @IBOutlet weak var lblConta: UILabel!
     @IBOutlet weak var lblAccountNumber: UILabel!
@@ -51,6 +51,7 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
     }
     
     // MARK: Setup
+    /// Basic Clean Architecture Setup
     private func setup() {
         let viewController = self
         let interactor = AccountDetailsInteractor()
@@ -65,15 +66,26 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
     }
     
     // MARK: Configure UI
+    /// Configure Basic UI
     private func configureUI() {
         btnLogout.setImage(UIImage(named: "logout"), for: .normal)
-        lblConta.text = AppConstant.txtConta
-        lblSaldo.text = AppConstant.txtSaldo
+        lblConta.text = NSLocalizedString("txt_Conta", comment: "")
+        lblSaldo.text = NSLocalizedString("txt_Saldo", comment: "")
         
         loaderViewBG.isHidden = true
     }
     
+    /// Button Action Log Out
+    /// - Parameter sender: Sender Logout
+    @IBAction func btnLogoutAction(_ sender: Any) {
+           performSegue(withIdentifier: "Logout", sender: nil)
+       }
+    
     // MARK: Routing
+    /// Default method used for Segue
+    /// - Parameters:
+    ///   - segue: Segure name
+    ///   - sender: Any
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scene = segue.identifier {
             let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
@@ -96,15 +108,21 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
     }
     
     // MARK: Retrieve Account and User Details
-    func fetchUserDetails() {
+    /// Fetch Logged In User DEtails
+    private func fetchUserDetails() {
         interactor?.getUserData()
     }
     
-    func getAccountDetails() {
+    /// Get Statement Details
+    private func getAccountDetails() {
         let request = AccountDetails.StatementDetails.Request()
         interactor?.getStatementList(request: request)
     }
-    
+}
+
+extension AccountDetailsViewController : AccountDetailsDisplayLogic {
+    /// Display User Account Detials
+    /// - Parameter viewModel: Account Data Model
     func displayUserDetail(viewModel: AccountDetails.AccountData.ViewModel) {
         let accountDetails : UserAccount = viewModel.accountDetails
         lblCustomerName.text = accountDetails.name
@@ -112,10 +130,8 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
         lblAccountBalance.text = String(format: "R$%.3f", accountDetails.balance ?? 0.0)
     }
     
-    @IBAction func btnLogoutAction(_ sender: Any) {
-        performSegue(withIdentifier: "Logout", sender: nil)
-    }
-    
+    /// Display Statement Details
+    /// - Parameter viewModel: Statement Detials Model
     func displayAccountStatementList(viewModel: AccountDetails.StatementDetails.ViewModel) {
         if let statementList = viewModel.statements {
             statements = statementList
@@ -124,8 +140,15 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
         stopLoaderActivity()
     }
     
+    /// Network error to check data connectivity
+    func showNetworkError() {
+        let txtAlertError = NSLocalizedString("txt_ErrorAlert", comment: "")
+        let txtAlertMessage = NSLocalizedString("txt_NetworkError", comment: "")
+        self.showAlertMessage(titleString: txtAlertError, messageString: txtAlertMessage)
+    }
+    
     // MARK: - Loader Methods
-    // Loader - Start Load
+    /// Start Loading
     func startLoaderActivity() {
         loaderViewBG.isHidden = false
         activityIndicator.isHidden = false
@@ -134,7 +157,7 @@ class AccountDetailsViewController: UIViewController, AccountDetailsDisplayLogic
         }
     }
     
-    // Loader - Stop Load
+    /// Stop Loadind
     func stopLoaderActivity() {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
@@ -150,7 +173,7 @@ extension AccountDetailsViewController : UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return AppConstant.txtRecentes
+        return NSLocalizedString("txt_Recentes", comment: "")
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

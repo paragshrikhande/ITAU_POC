@@ -18,6 +18,8 @@ enum ValidatorType {
 }
 
 enum VaildatorFactory {
+    /// Validate For Given Input
+    /// - Parameter type: Validation Type .userName / .password
     static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
         switch type {
         case .username: return UserNameValidator()
@@ -35,16 +37,18 @@ struct ValidationError: Error {
 }
 
 struct UserNameValidator: ValidatorConvertible {
+    /// Validate for User Name
+    /// - Parameter value: User Name Input
     func validated(_ value: String?) throws -> String {
         var resultStr : String = ""
         if let userNameValue = value {
             resultStr = userNameValue
             do {
                 if try NSRegularExpression(pattern: "^([0-9]{3}\\.[0-9]{3}\\.[0-9]{3}-[0-9]{2})|([A-Z0-9a-z.0-9_%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})$", options: .caseInsensitive).firstMatch(in: userNameValue, options: [], range: NSRange(location: 0, length: userNameValue.count)) == nil {
-                    throw ValidationError(AppConstant.txtInvalidUserName)
+                    throw ValidationError(NSLocalizedString("txt_InvalidUserName", comment: ""))
                 }
             } catch {
-                throw ValidationError(AppConstant.txtInvalidUserName)
+                throw ValidationError(NSLocalizedString("txt_InvalidUserName", comment: ""))
             }
         }
         return resultStr
@@ -52,16 +56,18 @@ struct UserNameValidator: ValidatorConvertible {
 }
 
 struct PasswordValidator: ValidatorConvertible {
+    /// Validate for password
+    /// - Parameter value: Password input
     func validated(_ value: String?) throws -> String {
         var resultStr : String = ""
         if let passwordValue = value {
             resultStr = passwordValue
             do {
                 if try NSRegularExpression(pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&#])[A-Za-z\\d$@$!%*?&#]", options: .caseInsensitive).firstMatch(in: passwordValue, options: [], range: NSRange(location: 0, length: passwordValue.count)) == nil {
-                    throw ValidationError(AppConstant.txtInvalidPassword)
+                    throw ValidationError(NSLocalizedString("txt_InvalidPassword", comment: ""))
                 }
             } catch {
-                throw ValidationError(AppConstant.txtInvalidPassword)
+                throw ValidationError(NSLocalizedString("txt_InvalidPassword", comment: ""))
             }
         }
         return resultStr

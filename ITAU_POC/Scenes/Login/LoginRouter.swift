@@ -20,11 +20,17 @@ protocol LoginDataPassing {
     var dataStore: LoginDataStore? { get }
 }
 
-class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
+class LoginRouter: NSObject, LoginDataPassing {
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
+
+}
+
+// MARK: LoginRoutingLogic Delegate
+extension LoginRouter : LoginRoutingLogic {
     
-    // MARK: Routing
+    /// Route to account Details
+    /// - Parameter segue: segue name
     func routeToAccountDetails(segue: UIStoryboardSegue?) {
         if let segue = segue, let destinationVC = segue.destination as? AccountDetailsViewController {
             var destinationDS : AccountDetailsDataStore? = destinationVC.router?.dataStore
@@ -41,11 +47,19 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
     }
     
     // MARK: Navigation
+    /// Navigate to account details
+    /// - Parameters:
+    ///   - source: login VC
+    ///   - destination: account detials VC
     func navigateToAccountDetails(source: LoginViewController?, destination: AccountDetailsViewController) {
         source?.show(destination, sender: nil)
     }
     
     // MARK: Passing data
+    /// Pass data to account details VC
+    /// - Parameters:
+    ///   - source: Login VC
+    ///   - destination: Account  Details VC
     func passDataToAccountDetails(source: LoginDataStore?, destination: inout AccountDetailsDataStore?) {
         destination?.userDetails = source?.userDetails
     }

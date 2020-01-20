@@ -17,11 +17,16 @@ protocol AccountDetailsPresentationLogic {
     func presentStatementDetails(response: AccountDetails.StatementDetails.Response)
     func presentStartLoaderActivity()
     func presentStopLoaderActivity()
+    func presentNetworkError()
 }
 
-class AccountDetailsPresenter: AccountDetailsPresentationLogic {
+class AccountDetailsPresenter {
     weak var viewController: AccountDetailsDisplayLogic?
-    
+}
+
+extension AccountDetailsPresenter: AccountDetailsPresentationLogic {
+    /// Present Account Details VC
+    /// - Parameter response: Account Data Response
     func presentAccountDetails(response: AccountDetails.AccountData.Response) {
         let userId = response.accountDetails.userId
         let name = response.accountDetails.name
@@ -33,16 +38,26 @@ class AccountDetailsPresenter: AccountDetailsPresentationLogic {
         viewController?.displayUserDetail(viewModel: viewModel)
     }
     
+    /// Display Account Statements
+    /// - Parameter response: Stament List Data
     func presentStatementDetails(response: AccountDetails.StatementDetails.Response) {
         let statementModel = AccountDetails.StatementDetails.ViewModel(statements: response.statements)
         viewController?.displayAccountStatementList(viewModel: statementModel)
     }
     
+    /// Start Loading Activity
     func presentStartLoaderActivity() {
         viewController?.startLoaderActivity()
     }
     
+    /// Stop Loading Activity
     func presentStopLoaderActivity() {
+        viewController?.stopLoaderActivity()
+    }
+    
+    /// Display Network Error
+    func presentNetworkError() {
+        viewController?.showNetworkError()
         viewController?.stopLoaderActivity()
     }
 }

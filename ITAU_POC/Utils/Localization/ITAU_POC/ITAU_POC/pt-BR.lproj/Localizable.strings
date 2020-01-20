@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  ITAU_POC
+
+  Created by Parag on 20/01/20.
+  Copyright © 2020 Parag. All rights reserved.
+*/
+
+//Validator
+"txt_InvalidUserName" = "Nome de usuário Inválido";
+"txt_InvalidPassword" = "Senha inválida";
+
+//Login VC
+"txt_UserPlaceholder" = "Do utilizador";
+"txt_PasswordPlaceHolder" = "Senha";
+"txt_Login" = "Conecte-se";
+
+//Account Detils VC
+"txt_Saldo" = "Saldo";
+"txt_Conta" = "Conta";
+"txt_Recentes" = "Recentes";
+"txt_Currency" = "R$";
+
+//UI Alert
+"txt_ErrorAlert" = "Erro";
+"txt_NetworkError" = "Verifique sua conectividade de rede";
+"txt_Ok" = "Está bem";

@@ -12,14 +12,20 @@ class UserDataStore {
     private init() {
     }
     
+    /// Get Logged in user id
     func getLoggedInUserId() -> String? {
         return UserDefaults.standard.string(forKey: AppConstant.txtUserID)
     }
     
+    /// Get logged in user name
     func getLoggedInUserName() -> String? {
         return UserDefaults.standard.string(forKey: AppConstant.txtUserName)
     }
     
+    /// Store User Id and User name
+    /// - Parameters:
+    ///   - userId: User Id
+    ///   - userName: User Name
     func storeUserData(userId : String?, userName : String?) {
         UserDefaults.standard.removeObject(forKey: AppConstant.txtUserID)
         UserDefaults.standard.removeObject(forKey: AppConstant.txtUserName)
@@ -29,10 +35,12 @@ class UserDataStore {
         UserDefaults.standard.synchronize()
     }
     
+    /// Clear Login Data
     func clearLoginData() {
         resetDefaults()
     }
     
+    /// Reset Login Data
     private func resetDefaults() {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()

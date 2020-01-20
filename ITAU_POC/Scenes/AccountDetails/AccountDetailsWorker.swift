@@ -13,6 +13,10 @@
 import UIKit
 
 class AccountDetailsWorker {
+    /// Get Statment Request
+    /// - Parameters:
+    ///   - urlString: URL String with User ID attached
+    ///   - completion: Completion block with response
     func getStatementDetails(urlString : URL, completion: @escaping (Bool, StatementDetailsResponse?, Error?) -> Void) {
         ServiceHandler.getRequest(url: urlString, responseType: StatementDetailsResponse.self) { (statementList, error) in
             if let statementList = statementList {

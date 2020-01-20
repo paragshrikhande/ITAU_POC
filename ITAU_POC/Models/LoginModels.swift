@@ -31,7 +31,6 @@ struct LoginResponse: Codable {
 }
 
 enum Login {
-    // MARK: Use cases
     enum LoginModel {
         struct Request {
             var loginInfo: LoginInfo?
